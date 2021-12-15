@@ -17,7 +17,7 @@ public class CloudFrontDemo {
         Collection<String> paths = new ArrayList<String>();
         paths.add("/mp4/What-is-AWS.mp4");
         paths.add("/imgs/*");
-        createInvalidation(cloudFrontClient, "E271AZ5HGQ504X", paths);
+        createInvalidation(cloudFrontClient, "E370EQFIREOXXX", paths);
     }
 
     /**
