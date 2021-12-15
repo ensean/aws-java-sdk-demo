@@ -1,12 +1,9 @@
 package org.example;
 
-import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
 import software.amazon.awssdk.regions.Region;
-import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 import software.amazon.awssdk.services.ivs.IvsClient;
 import software.amazon.awssdk.services.ivs.model.CreateChannelRequest;
 import software.amazon.awssdk.services.ivs.model.CreateChannelResponse;
-import software.amazon.awssdk.services.s3.S3Client;
 
 import java.util.HashMap;
 
@@ -14,7 +11,7 @@ import java.util.HashMap;
  * Hello world for aws ivs jdk!
  *
  */
-public class App 
+public class IVSDemo
 {
     public static void main( String[] args )
     {
