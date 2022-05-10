@@ -6,6 +6,8 @@ import java.util.Map;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.pinpoint.PinpointClient;
 import software.amazon.awssdk.services.pinpoint.model.AddressConfiguration;
+import software.amazon.awssdk.services.pinpoint.model.DirectMessageConfiguration;
+import software.amazon.awssdk.services.pinpoint.model.EmailMessage;
 import software.amazon.awssdk.services.pinpoint.model.MessageRequest;
 import software.amazon.awssdk.services.pinpoint.model.SendMessagesRequest;
 import software.amazon.awssdk.services.pinpoint.model.Template;
@@ -37,10 +39,20 @@ public class PinpointDemo {
         TemplateConfiguration templateConfiguration = TemplateConfiguration.builder()
                 .emailTemplate(emailTemplate)
                 .build();
+
+        // set message configuration
+        EmailMessage eMessage = EmailMessage.builder()
+        .fromAddress("no-reply@xxxx.com")   // sender mail address
+        .build();
+        DirectMessageConfiguration directMessageConfiguration = DirectMessageConfiguration.builder()
+        .emailMessage(eMessage)
+        .build();
+        
         // set MessageRequest
         MessageRequest mRequest = MessageRequest.builder()
                 .addresses(toAddress)
                 .templateConfiguration(templateConfiguration)
+                .messageConfiguration(directMessageConfiguration)
                 .build();
         //set sendmessage request
         SendMessagesRequest sendMessagesRequest = SendMessagesRequest.builder()
