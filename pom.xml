@@ -47,6 +47,10 @@
       <groupId>software.amazon.awssdk</groupId>
       <artifactId>cloudfront</artifactId>
     </dependency>
+    <dependency>
+      <groupId>software.amazon.awssdk</groupId>
+      <artifactId>pinpoint</artifactId>
+    </dependency>
   </dependencies>
 
   <build>
