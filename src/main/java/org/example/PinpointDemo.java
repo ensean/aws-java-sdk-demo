@@ -30,8 +30,8 @@ public class PinpointDemo {
 
         // set template
         Template emailTemplate = Template.builder()
-                .name("xxxx")
-                .version("1")
+                .name("xxxx")   // template name
+                .version("1")   // template version
                 .build();
         // set template configuration
         TemplateConfiguration templateConfiguration = TemplateConfiguration.builder()
@@ -44,7 +44,7 @@ public class PinpointDemo {
                 .build();
         //set sendmessage request
         SendMessagesRequest sendMessagesRequest = SendMessagesRequest.builder()
-                .applicationId("xx")
+                .applicationId("xx")    // project id of pinpoint
                 .messageRequest(mRequest)
                 .build();
         // send message
