@@ -51,6 +51,15 @@
       <groupId>software.amazon.awssdk</groupId>
       <artifactId>pinpoint</artifactId>
     </dependency>
+    <dependency>
+      <groupId>software.amazon.awssdk</groupId>
+      <artifactId>sesv2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.24</version>
+  </dependency>
   </dependencies>
 
   <build>
