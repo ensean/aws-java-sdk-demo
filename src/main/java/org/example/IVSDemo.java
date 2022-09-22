@@ -48,9 +48,11 @@ public class IVSDemo
                 .tags(cTags)
                 .build();
         CreateChannelResponse resp = ivsClient.createChannel(createChannelRequest);
-        System.out.println(resp.toString());
+        // 推流服务器
         String ingestEndpoint = resp.channel().ingestEndpoint();
+        // 推流key
         String streamKey = resp.streamKey().value();
+        // 拼接终端推流地址
         System.out.println("The ingest address is " + "rtmp://"+ ingestEndpoint+"/app/" + streamKey);
     }
 }
