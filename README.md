@@ -1,4 +1,4 @@
-## AWS ivs Java SDK示例
+## AWS Java SDK V2示例
 
 ### 用途
 
