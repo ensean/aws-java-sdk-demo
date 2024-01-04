@@ -101,7 +101,7 @@ public class ECRedisTLSDemo {
      */
     private void startClient() throws IOException {
         System.out.println("Initializing Redis client...");
-        jedis = new Jedis(redisHost, redisPort, clientTimeoutInSecs);
+        jedis = new Jedis(redisHost, redisPort, clientTimeoutInSecs, true);
         jedis.auth(redisAuth);
         System.out.println("Completed initializing Redis client.");
     }
