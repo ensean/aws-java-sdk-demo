@@ -2,15 +2,14 @@ package org.example;
 
 
 /*
- *
- * Copyright 2021 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
- * SPDX-License-Identifier: MIT-0
- *
+ * jedis 连接 TLS 开启的Elasticache Redis（集群模式关闭）示例
+ * 使用指引：
+ *  1）编辑 config.properties，配置 Elasticache Redis 地址、密码
+ *  2）服务器上配置 java、mvn 环境
+ *  3）使用 mvn 命令测试
+ *      a）mvn compile
+ *      b) mvn exec:java -Dexec.mainClass="org.example.ECRedisTLSDemo"
  */
-
-
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Date;
 import java.util.Properties;
