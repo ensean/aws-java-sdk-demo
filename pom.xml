@@ -23,7 +23,7 @@
       <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>bom</artifactId>
-        <version>2.21.20</version>
+        <version>2.23.5</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -43,6 +43,14 @@
     <dependency>
       <groupId>software.amazon.awssdk</groupId>
       <artifactId>ivs</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>software.amazon.awssdk</groupId>
+      <artifactId>bedrockruntime</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>software.amazon.awssdk</groupId>
+      <artifactId>apache-client</artifactId>
     </dependency>
     <dependency>
       <groupId>software.amazon.awssdk</groupId>

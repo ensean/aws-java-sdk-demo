@@ -1,18 +1,17 @@
 package org.example;
 
-import com.sun.tools.javac.util.List;
 import org.json.JSONObject;
 import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
 import software.amazon.awssdk.core.SdkBytes;
 import software.amazon.awssdk.http.SdkHttpClient;
 import software.amazon.awssdk.http.apache.ApacheHttpClient;
-import software.amazon.awssdk.http.apache.internal.impl.ApacheSdkHttpClient;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.bedrockruntime.BedrockRuntimeClient;
 import software.amazon.awssdk.services.bedrockruntime.model.InvokeModelRequest;
 import software.amazon.awssdk.services.bedrockruntime.model.InvokeModelResponse;
 
 import java.time.Duration;
+import java.util.ArrayList;
 
 public class Bedrock {
     public static void main(String[] agrs){
@@ -37,12 +36,13 @@ public class Bedrock {
                 .overrideConfiguration(b -> b.apiCallTimeout(Duration.ofSeconds(300)).apiCallAttemptTimeout(Duration.ofSeconds(300)))
                 .credentialsProvider(ProfileCredentialsProvider.create())
                 .build();
-
+        ArrayList<String> stop = new ArrayList<String>();
+        stop.add("\n\nHuman:");
         String payload = new JSONObject()
                 .put("prompt", enclosedPrompt)
                 .put("max_tokens_to_sample", 2000)
                 .put("temperature", 0.5)
-                .put("stop_sequences", List.of("\n\nHuman:"))
+                .put("stop_sequences", stop)
                 .toString();
 
         InvokeModelRequest request = InvokeModelRequest.builder()
