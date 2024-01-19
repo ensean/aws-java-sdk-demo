@@ -24,7 +24,7 @@ public class Bedrock {
         String prompt = "Who is the president of US? Why does he/she can be the president? Please give a narrative explanation，2000 words";
         String claudeModelId = "anthropic.claude-v2";
 
-        SdkHttpClient sdkHttpClient = ApacheHttpClient.builder().socketTimeout(Duration.ofSeconds(3)).build();
+        SdkHttpClient sdkHttpClient = ApacheHttpClient.builder().socketTimeout(Duration.ofSeconds(300)).build();
 
 
 
@@ -51,11 +51,14 @@ public class Bedrock {
                 .contentType("application/json")
                 .accept("application/json")
                 .build();
+        long start = System.currentTimeMillis();
         InvokeModelResponse response = client.invokeModel(request);
 
         JSONObject responseBody = new JSONObject(response.body().asUtf8String());
 
         String generatedText = responseBody.getString("completion");
+        long end = System.currentTimeMillis();
         System.out.println(generatedText);
+        System.out.println("Time cost: " + (end - start)/1000 + " seconds");
     }
 }
