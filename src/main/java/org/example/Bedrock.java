@@ -15,21 +15,14 @@ import java.util.ArrayList;
 
 public class Bedrock {
     public static void main(String[] agrs){
-//        BedrockRuntimeClient client = BedrockRuntimeClient.builder()
-//                .overrideConfiguration(b -> b.apiCallTimeout(Duration.ofSeconds(300)))
-//                .region(Region.US_EAST_1)
-//                .credentialsProvider(ProfileCredentialsProvider.create())
-//                .build();
         String prompt = "Who is the president of US? Why does he/she can be the president? Please give a narrative explanation，2000 words";
         String claudeModelId = "anthropic.claude-v2";
 
+        // https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/best-practices.html#bestpractice5
         SdkHttpClient sdkHttpClient = ApacheHttpClient.builder().socketTimeout(Duration.ofSeconds(300)).build();
-
-
 
         // Claude requires you to enclose the prompt as follows:
         String enclosedPrompt = "Human: " + prompt + "\n\nAssistant:";
-
 
         BedrockRuntimeClient client = BedrockRuntimeClient.builder().httpClient(sdkHttpClient)
                 .region(Region.US_WEST_2)
